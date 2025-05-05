@@ -3,10 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bguallasaminTS3.Vista.vista2"
              Title="vista2">
-    <VerticalStackLayout>
+    <ContentPage.Resources>
+        <Style x:Key="estiloLabel" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="estiloBoton" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Datos registrados"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Identificacion"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblIdentificacion" 
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label Text="Nombres"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblNombre"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label Text="Apellidos"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblApellido"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label Text="Fecha"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblFecha"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label Text="Correo"
+                   Grid.Row="4"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblCorreo"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label Text="Salario"
+                   Grid.Row="5"
+                   Grid.Column="0"
+                   Style="{StaticResource estiloLabel}"/>
+            <Label x:Name="lblSalario"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Style="{StaticResource estiloLabel}"/>
+        </Grid>
+        <Button Text="Generar Archivo"
+                Clicked="Button_Clicked"
+                Style="{StaticResource estiloBoton}"/>
     </VerticalStackLayout>
 </ContentPage>

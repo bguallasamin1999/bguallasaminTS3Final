@@ -3,27 +3,111 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bguallasaminTS3.Vista.vista1"
              Title="vista1">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout
         Padding="20"
         Spacing="20">
+        <Image
+            Source="logo.png"
+            HorizontalOptions="Center"
+            WidthRequest="250"
+            />
         <Label 
             Text="Registro Empleado"
             TextColor="Black"
-            HorizontalOptions="Center" />
-        <HorizontalStackLayout
-            Padding="20"
-            Spacing="80"
-            HorizontalOptions="Center">
-            <Picker x:Name="selIdentificacion" Title="Seleccione tipo identificación">
+            HorizontalOptions="Center"
+            FontSize="30"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Picker x:Name="selIdentificacion" 
+                    Title="Seleccione tipo identificación"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="0"
+                    Grid.Row="0">
                 <Picker.Items>
                     <x:String>Cedula</x:String>
                     <x:String>Ruc</x:String>
                     <x:String>Pasaporte</x:String>
                 </Picker.Items>
             </Picker>
-        <Entry x:Name="txtIdentificacion" 
-               Placeholder="Ingrese CI/RUC/PASAPORTE" HorizontalTextAlignment="Center"></Entry>
-        </HorizontalStackLayout>
-        
+            <Entry x:Name="txtIdentificacion" 
+                   Placeholder="Ingrese identificacion" 
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="1"></Entry>
+            <Label
+                Text="Nombres"
+                Grid.Row="1"
+                Grid.Column="0"/>        
+            <Entry x:Name="txtNombre" 
+                   Placeholder="Ingrese nombres" 
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="1"
+                   Grid.Column="1"></Entry>
+            <Label
+                Text="Apellidos"
+                Grid.Row="2"
+                Grid.Column="0"/>
+            <Entry
+                x:Name="txtApellido"
+                Placeholder="Ingrese apellidos"
+                HorizontalTextAlignment="Center"
+                Grid.Row="2"
+                Grid.Column="1"></Entry>
+            <Label
+                Text="Fecha"
+                Grid.Row="3"
+                Grid.Column="0"/>
+            <DatePicker
+                x:Name="pickDate"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Grid.Column="1"
+                Grid.Row="3"></DatePicker>
+            <Label
+                Text="Correo"
+                Grid.Row="4"
+                Grid.Column="0"/>
+            <Entry
+                x:Name="txtCorreo"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Grid.Row="4"
+                Grid.Column="1"></Entry>
+            <Label
+                Text="Salario"
+                Grid.Row="5"
+                Grid.Column="0"/>
+            <Entry
+                x:Name="txtSalario"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Grid.Row="5"
+                Grid.Column="1"></Entry>
+        </Grid>
+        <Button
+            x:Name="btnRegistrar"
+            Text="Registrar"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="btnRegistrar_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
